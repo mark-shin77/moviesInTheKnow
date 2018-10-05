@@ -9,4 +9,18 @@ $(document).ready(function(){
     messagingSenderId: "175120493064"
   };
   firebase.initializeApp(config);
+
+  apiKey="1d04e76fc51c2c152a4e8afb75a23a2a";
+  queryURL="https://api.themoviedb.org/3/discover/movie?page=1&include_video=true&include_adult=true&sort_by=popularity.desc&language=en-US&api_key=" + apiKey;
+
+  $.ajax({
+    url: queryURL,
+    method: "GET"
+  }).then(function(response){  
+    console.log(response);
+    $('.section2').html("http://image.tmdb.org/t/p/w185/" + response.results[0].poster_path);
+});
+
+  
+
 });
