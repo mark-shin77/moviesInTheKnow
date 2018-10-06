@@ -18,7 +18,10 @@ $(document).ready(function(){
     method: "GET"
   }).then(function(response){  
     console.log(response);
-    $('.section2').html("http://image.tmdb.org/t/p/w185/" + response.results[0].poster_path);
+    for (var x = 0; x < 8; x++){    
+        $('.section2').append("<img src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
+        $('.section2').append(response.results[x].title);
+    }
 });
 
   
