@@ -46,7 +46,7 @@ $(document).ready(function(){
 
   // Generate Movie Posters & Titles to 'Top 10 Moives of All Time'
   apiKey="1d04e76fc51c2c152a4e8afb75a23a2a";
-  queryURL="https://api.themoviedb.org/3/discover/movie?primary_release_date.lte=2018-12-31&primary_release_date.gte=2018-10-16&page=1&include_video=false&include_adult=false&sort_by=popularity.desc&language=en-US&api_key=" + apiKey;
+  queryURL="https://api.themoviedb.org/3/discover/movie?sort_by=vote_average.desc&vote_count.gte=1000&page=1&include_video=false&include_adult=false&language=en-US&api_key=" + apiKey;
 
   $.ajax({
     url: queryURL,
