@@ -1,7 +1,7 @@
 
 body {
     font-family: 'Changa', sans-serif;
-
+}
 .second-section2,
 .second-section3,
 .third-section2,
@@ -9,4 +9,4 @@ body {
 .fourth-section2,
 .fourth-section3{
     display:none;
-}
+};
