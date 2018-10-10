@@ -17,41 +17,63 @@
     <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
     <!-- My CSS -->
     <link rel="stylesheet" type="text/css" href="../project1/assets/css/movieStyle.css">
+    <!--Boostrap js-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- My Javascript -->
     <script src="../project1/assets/javascript/movie.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Changa" rel="stylesheet">
 </head>
 <body>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="card">
-          <div class="card-header">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-              <a class="navbar-brand" href="#">Movies!</a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                  <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                      <a class="nav-link" href="#">Top Movies <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Coming Soon</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link disabled" href="#">Top 10</a>
-                    </li>
-                  </ul>
-                  <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                  </form>
-              </div>
-            </nav>              
-          </div>
-          <div class="card-body">
+  <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">Movies in the Know</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Now Playing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Coming Soon</a>
+                </li>
+                <li class="nav-item">    
+                    <a class="nav-link" href="#">Top 10 Movies of All Time</a>
+                </li>
+    <!-- Search form -->
+                <div class="md-form">
+                    <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+                </div>
+            </ul>
+        </div>
+    </div>
+    </nav>  
+    <!--carousel starts -->            
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active item">
+          <img class="d-block w-100" src="assets/images/Venom-Movie.jpg" alt="First slide">
+        </div>
+        <div class="carousel-item item">
+          <img class="d-block w-100" src="assets/images/background2.jpg" alt="Second slide">
+        </div>
+        <div class="carousel-item item">
+          <img class="d-block w-100" src="assets/images/background3.jpeg" alt="Third slide">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+      <div class="card-body">
             <h5 class="card-title"></h5>
             <p class="card-text section1" id="header titleScreen"></p>
           </div>
@@ -62,53 +84,44 @@
 
 <br>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="card">
-          <div class="card-header">
+  <div class="container-fluid padding">
+    <div class="row welcome card-text">
+      <div class="col-12">
+          <h1 class="card-header">
             Now Playing
-          </div>
+          </h1>
           <div class="card-body">
             <h5 class="card-title"></h5>
             <p class="card-text section2 nowPlaying"></p>
           </div>
-        </div>
-      </div>
+          </div>
     </div>
 <br>
     <div class="row">
-      <div class="col-lg-12">
-        <div class="card">
-          <div class="card-header">
+      <div class="col-12">
+          <h1 class="card-header">
             Coming Soon
-          </div>
+          </h1>
           <div class="card-body">
             <h5 class="card-title"></h5>
             <p class="card-text section3 comingSoon"></p>
           </div>
-        </div>
       </div>
     </div>
   </div>
 
 <br>
-
-  <div class="container">
     <div class="row">
-      <div class="col-lg-12">
-        <div class="card">
-          <div class="card-header">
+      <div class="col-12">
+          <h1 class="card-header">
                 Top 10 Movies of All Time
-          </div>
+          </h1>
           <div class="card-body">
             <h5 class="card-title"></h5>
             <p class="card-text section4 topMovies"></p>
-          </div>
-        </div>        
+          </div>       
       </div>
     </div>
-  </div>
     
 </body>
 </html>
