@@ -12,53 +12,85 @@ $(document).ready(function(){
 
   // Generate Movie Posters & Title to 'Now Playing'
   apiKey="1d04e76fc51c2c152a4e8afb75a23a2a";
-  queryURL="https://api.themoviedb.org/3/discover/movie?primary_release_date.lte=2018-10-16&primary_release_date.gte=2018-8-01&page=1&include_video=false&include_adult=false&sort_by=popularity.desc&language=en-US&api_key=" + apiKey;
+  queryURL="https://api.themoviedb.org/3/discover/movie?primary_release_date.lte=2018-10-16&primary_release_date.gte=2018-8-01&page=1&include_video=true&include_adult=false&sort_by=popularity.desc&language=en-US&api_key=" + apiKey;
 
   $.ajax({
     url: queryURL,
     method: "GET"
   }).then(function(response){  
     console.log(response);
-    for (var x = 0; x < 4; x++){
+    for (var x = 0; x < 12; x++){
       if(response.results[x].poster_path !== null){
-        $('.second-section1').append("<img src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
-        $('.second-section1').append(response.results[x].title);
+        $('#item1').append("<img id='movie" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
+        $('#item2').append(response.results[x].title);
+        $('#movie'+ x).addClass('movie-poster');
+        $('#movie' + x).attr('data-id', x)
       }
-      console.log('hi')
     }
     for (var x = 4; x < 8; x++){
       if(response.results[x].poster_path !== null){
-        $('.second-section2').append("<img src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
-        $('.second-section2').append(response.results[x].title);
+        $('#item3').append("<img id='movie" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
+        $('#item4').append(response.results[x].title);
+        $('#movie'+ x).addClass('movie-poster');
+        $('#movie' + x).attr('data-id', x)
       }
-      console.log('hey')
     }
     for (var x = 8; x < 12; x++){
       if(response.results[x].poster_path !== null){
-        $('.second-section3').append("<img src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
-        $('.second-section3').append(response.results[x].title);
+        $('#item5').append("<img id='movie" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
+        $('#item6').append(response.results[x].title);
+        $('#movie'+ x).addClass('movie-poster');
+        $('#movie' + x).attr('data-id', x)
       }
-      console.log('bye')
     }
+    $('.movie-poster').on('click', function(){
+      console.log('working');
+      // Hides Front Page and displays movie info screen
+      $('.movie-info-screen').css('display', 'inline-block');
+      $('.carousel').css('display', 'none');
+      $('.first-page').css('display', 'none');
+
+      var movies = response.results
+      var clicked = $(this).attr('data-id');
+      // Display Poster
+      $('.poster').html("<img src='http://image.tmdb.org/t/p/w185/" + movies[clicked].poster_path + "'></img>");
+      // Display Title
+      $('.title').html(movies[clicked].title);
+      // Display Overview
+      $('.overview').html('<br>' + movies[clicked].overview);
+      // Display Overview
+      $('.release-date').html('<br>' + 'Release Date: ' + movies[clicked].release_date);
+      // Display Overview
+      $('.vote-average').html('<br>' + 'Voters Average: ' + movies[clicked].vote_average);
+    })
 });
 
   // Pagination for Now Playing 
   $('.part1').on('click', function(){
-    $('.second-section1').css('display', 'inline-block');
-    $('.second-section2').css('display', 'none');
-    $('.second-section3').css('display', 'none');
+    $('#item1').css('display', 'inline-block');
+    $('#item2').css('display', 'inline-block');
+    $('#item3').css('display', 'none');
+    $('#item4').css('display', 'none');
+    $('#item5').css('display', 'none');
+    $('#item6').css('display', 'none');
   })
   $('.part2').on('click', function(){
     // console.log('working');
-    $('.second-section1').css('display', 'none');
-    $('.second-section2').css('display', 'inline-block');
-    $('.second-section3').css('display', 'none');
+    $('#item1').css('display', 'none');
+    $('#item2').css('display', 'none');
+    $('#item3').css('display', 'inline-block');
+    $('#item4').css('display', 'inline-block');
+    $('#item5').css('display', 'none');
+    $('#item6').css('display', 'none');
   })
   $('.part3').on('click', function(){
     // console.log('works');
-    $('.second-section1').css('display', 'none');
-    $('.second-section2').css('display', 'none');
-    $('.second-section3').css('display', 'inline-block');
+    $('#item1').css('display', 'none');
+    $('#item2').css('display', 'none');
+    $('#item3').css('display', 'none');
+    $('#item4').css('display', 'none');
+    $('#item5').css('display', 'inline-block');
+    $('#item6').css('display', 'inline-block');
   })
 
   // Generate Movie Posters & Title to 'Coming Soon'
@@ -69,11 +101,12 @@ $(document).ready(function(){
     url: queryURL,
     method: "GET"
   }).then(function(response){  
-    console.log(response);
+    // console.log(response);
     for (var x = 0; x < 5; x++){
       if(response.results[x].poster_path !== null){
         $('.third-section1').append("<img src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
         $('.third-section1').append(response.results[x].title);
+        $('img').addClass('movie-poster');
       }
     }
     for (var x = 5; x < 9; x++){
@@ -117,7 +150,7 @@ $(document).ready(function(){
     url: queryURL,
     method: "GET"
   }).then(function(response){  
-    console.log(response);
+    // console.log(response);
     for (var x = 0; x < 4; x++){    
       if(response.results[x].poster_path !== null){
         $('.fourth-section1').append("<img src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
@@ -137,7 +170,7 @@ $(document).ready(function(){
       }
     }
   });
-    // Pagination for Coming Soon 
+    // Pagination for Top 10
     $('.part7').on('click', function(){
       $('.fourth-section1').css('display', 'inline-block');
       $('.fourth-section2').css('display', 'none');
@@ -156,4 +189,7 @@ $(document).ready(function(){
       $('.fourth-section3').css('display', 'inline-block');
     })
 
+    $('#homescreen').on('click', function(){
+      window.location.reload(true);
+    });
 });
