@@ -18,27 +18,24 @@ $(document).ready(function(){
     url: queryURL,
     method: "GET"
   }).then(function(response){  
-    console.log(response);
+    // console.log(response);
     for (var x = 0; x < 4; x++){
       if(response.results[x].poster_path !== null){
         $('#item1').append("<img id='movie1" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
-        $('#item2').append(response.results[x].title);
         $('#movie'+ x).addClass('movie-poster-section2');
         $('#movie' + x).attr('data-id', x)
       }
     }
     for (var x = 4; x < 8; x++){
       if(response.results[x].poster_path !== null){
-        $('#item3').append("<img id='movie1" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
-        $('#item4').append(response.results[x].title);
+        $('#item2').append("<img id='movie1" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
         $('#movie'+ x).addClass('movie-poster-section2');
         $('#movie' + x).attr('data-id', x)
       }
     }
     for (var x = 8; x < 12; x++){
       if(response.results[x].poster_path !== null){
-        $('#item5').append("<img id='movie1" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
-        $('#item6').append(response.results[x].title);
+        $('#item3').append("<img id='movie1" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
         $('#movie1'+ x).addClass('movie-poster-section2');
         $('#movie1' + x).attr('data-id', x)
       }
@@ -68,29 +65,20 @@ $(document).ready(function(){
   // Pagination for Now Playing 
   $('.part1').on('click', function(){
     $('#item1').css('display', 'inline-block');
-    $('#item2').css('display', 'inline-block');
+    $('#item2').css('display', 'none');
     $('#item3').css('display', 'none');
-    $('#item4').css('display', 'none');
-    $('#item5').css('display', 'none');
-    $('#item6').css('display', 'none');
   })
   $('.part2').on('click', function(){
     // console.log('working');
     $('#item1').css('display', 'none');
-    $('#item2').css('display', 'none');
-    $('#item3').css('display', 'inline-block');
-    $('#item4').css('display', 'inline-block');
-    $('#item5').css('display', 'none');
-    $('#item6').css('display', 'none');
+    $('#item2').css('display', 'inline-block');
+    $('#item3').css('display', 'none');
   })
   $('.part3').on('click', function(){
     // console.log('works');
     $('#item1').css('display', 'none');
     $('#item2').css('display', 'none');
-    $('#item3').css('display', 'none');
-    $('#item4').css('display', 'none');
-    $('#item5').css('display', 'inline-block');
-    $('#item6').css('display', 'inline-block');
+    $('#item3').css('display', 'inline-block');
   })
 
   // Generate Movie Posters & Title to 'Coming Soon'
@@ -101,26 +89,23 @@ $(document).ready(function(){
     url: queryURL,
     method: "GET"
   }).then(function(response){  
-    // console.log(response);
+    console.log(response);
     for (var x = 0; x < 5; x++){
       if(response.results[x].poster_path !== null){
-        $('#item7').append("<img id='movie2" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
-        $('#item8').append(response.results[x].title);
+        $('#item4').append("<img id='movie2" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
         $('#movie2'+ x).addClass('movie-poster-section3');
         $('#movie2' + x).attr('data-id', x)      }
     }
-    for (var x = 5; x < 9; x++){
+    for (var x = 5; x < 10; x++){
       if(response.results[x].poster_path !== null){
-        $('#item9').append("<img id='movie2" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
-        $('#item10').append(response.results[x].title);
+        $('#item5').append("<img id='movie2" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
         $('#movie2'+ x).addClass('movie-poster-section3');
         $('#movie2' + x).attr('data-id', x)
       }
     }
-    for (var x = 9; x < 13; x++){
+    for (var x = 10; x < 15; x++){
       if(response.results[x].poster_path !== null){
-        $('#item11').append("<img id='movie2" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
-        $('#item12').append(response.results[x].title);
+        $('#item6').append("<img id='movie2" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
         $('#movie2'+ x).addClass('movie-poster-section3');
         $('#movie2' + x).attr('data-id', x)
       }
@@ -152,30 +137,21 @@ $(document).ready(function(){
 
     // Pagination for Now Playing 
     $('.part4').on('click', function(){
-      $('#item7').css('display', 'inline-block');
-      $('#item8').css('display', 'inline-block');
-      $('#item9').css('display', 'none');
-      $('#item10').css('display', 'none');
-      $('#item11').css('display', 'none');
-      $('#item12').css('display', 'none');
+      $('#item4').css('display', 'inline-block');
+      $('#item5').css('display', 'none');
+      $('#item6').css('display', 'none');
     })
     $('.part5').on('click', function(){
       // console.log('working');
-      $('#item7').css('display', 'none');
-      $('#item8').css('display', 'none');
-      $('#item9').css('display', 'inline-block');
-      $('#item10').css('display', 'inline-block');
-      $('#item11').css('display', 'none');
-      $('#item12').css('display', 'none');
+      $('#item4').css('display', 'none');
+      $('#item5').css('display', 'inline-block');
+      $('#item6').css('display', 'none');
     })
     $('.part6').on('click', function(){
       // console.log('works');
-      $('#item7').css('display', 'none');
-      $('#item8').css('display', 'none');
-      $('#item9').css('display', 'none');
-      $('#item10').css('display', 'none');
-      $('#item11').css('display', 'inline-block');
-      $('#item12').css('display', 'inline-block');
+      $('#item4').css('display', 'none');
+      $('#item5').css('display', 'none');
+      $('#item6').css('display', 'inline-block');
     })
 
   // Generate Movie Posters & Titles to 'Top 10 Moives of All Time'
@@ -189,24 +165,21 @@ $(document).ready(function(){
     // console.log(response);
     for (var x = 0; x < 4; x++){    
       if(response.results[x].poster_path !== null){
-        $('#item13').append("<img id='movie3" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
-        $('#item14').append(response.results[x].title);
+        $('#item7').append("<img id='movie3" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
         $('#movie3'+ x).addClass('movie-poster-section4');
         $('#movie3' + x).attr('data-id', x)
       }
     }
     for (var x = 4; x < 8; x++){
       if(response.results[x].poster_path !== null){
-        $('#item15').append("<img id='movie3" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
-        $('#item16').append(response.results[x].title);
+        $('#item8').append("<img id='movie3" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
         $('#movie3'+ x).addClass('movie-poster-section4');
         $('#movie3' + x).attr('data-id', x)
       }
     }    
     for (var x = 8; x < 12; x++){
       if(response.results[x].poster_path !== null){
-        $('#item17').append("<img id='movie3" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
-        $('#item18').append(response.results[x].title);
+        $('#item9').append("<img id='movie3" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
         $('#movie3'+ x).addClass('movie-poster-section4');
         $('#movie3' + x).attr('data-id', x)
       }
@@ -238,45 +211,36 @@ $(document).ready(function(){
 
     // Pagination for Now Playing 
     $('.part7').on('click', function(){
-      $('#item13').css('display', 'inline-block');
-      $('#item14').css('display', 'inline-block');
-      $('#item15').css('display', 'none');
-      $('#item16').css('display', 'none');
-      $('#item17').css('display', 'none');
-      $('#item18').css('display', 'none');
+      $('#item7').css('display', 'inline-block');
+      $('#item8').css('display', 'none');
+      $('#item9').css('display', 'none');
     })
     $('.part8').on('click', function(){
       // console.log('working');
-      $('#item13').css('display', 'none');
-      $('#item14').css('display', 'none');
-      $('#item15').css('display', 'inline-block');
-      $('#item16').css('display', 'inline-block');
-      $('#item17').css('display', 'none');
-      $('#item18').css('display', 'none');
+      $('#item7').css('display', 'none');
+      $('#item8').css('display', 'inline-block');
+      $('#item9').css('display', 'none');
     })
     $('.part9').on('click', function(){
       // console.log('works');
-      $('#item13').css('display', 'none');
-      $('#item14').css('display', 'none');
-      $('#item15').css('display', 'none');
-      $('#item16').css('display', 'none');
-      $('#item17').css('display', 'inline-block');
-      $('#item18').css('display', 'inline-block');
+      $('#item7').css('display', 'none');
+      $('#item8').css('display', 'none');
+      $('#item9').css('display', 'inline-block');
     })
 
     $('#homescreen').on('click', function(){
       window.location.reload(true);
     });
 
-    apiKey = "AIzaSyAB9orHxZ9-7MUnlwFtmbHcUeaLCcmppTc"
-    queryURL = "https://www.googleapis.com/youtube/v3/videos?" + apiKey;
+    // apiKey = "AIzaSyAB9orHxZ9-7MUnlwFtmbHcUeaLCcmppTc"
+    // queryURL = "https://www.googleapis.com/youtube/v3/videos?" + apiKey;
 
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function(response){
-      console.log(response);
+    // $.ajax({
+    //   url: queryURL,
+    //   method: "GET"
+    // }).then(function(response){
+    //   console.log(response);
       
      
-    })
+    // })
 });
