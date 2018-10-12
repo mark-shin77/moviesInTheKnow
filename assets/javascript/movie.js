@@ -21,29 +21,29 @@ $(document).ready(function(){
     console.log(response);
     for (var x = 0; x < 4; x++){
       if(response.results[x].poster_path !== null){
-        $('#item1').append("<img id='movie" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
+        $('#item1').append("<img id='movie1" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
         $('#item2').append(response.results[x].title);
-        $('#movie'+ x).addClass('movie-poster');
+        $('#movie'+ x).addClass('movie-poster-section2');
         $('#movie' + x).attr('data-id', x)
       }
     }
     for (var x = 4; x < 8; x++){
       if(response.results[x].poster_path !== null){
-        $('#item3').append("<img id='movie" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
+        $('#item3').append("<img id='movie1" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
         $('#item4').append(response.results[x].title);
-        $('#movie'+ x).addClass('movie-poster');
+        $('#movie'+ x).addClass('movie-poster-section2');
         $('#movie' + x).attr('data-id', x)
       }
     }
     for (var x = 8; x < 12; x++){
       if(response.results[x].poster_path !== null){
-        $('#item5').append("<img id='movie" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
+        $('#item5').append("<img id='movie1" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
         $('#item6').append(response.results[x].title);
-        $('#movie'+ x).addClass('movie-poster');
-        $('#movie' + x).attr('data-id', x)
+        $('#movie1'+ x).addClass('movie-poster-section2');
+        $('#movie1' + x).attr('data-id', x)
       }
     }
-    $('.movie-poster').on('click', function(){
+    $('.movie-poster-section2').on('click', function(){
       console.log('working');
       // Hides Front Page and displays movie info screen
       $('.movie-info-screen').css('display', 'inline-block');
@@ -63,7 +63,7 @@ $(document).ready(function(){
       // Display Overview
       $('.vote-average').html('<br>' + 'Voters Average: ' + movies[clicked].vote_average);
     })
-});
+  });
 
   // Pagination for Now Playing 
   $('.part1').on('click', function(){
@@ -104,50 +104,51 @@ $(document).ready(function(){
     // console.log(response);
     for (var x = 0; x < 5; x++){
       if(response.results[x].poster_path !== null){
-        $('#item7').append("<img src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
+        $('#item7').append("<img id='movie2" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
         $('#item8').append(response.results[x].title);
-        $('#movie'+ x).addClass('movie-poster');
-        $('#movie' + x).attr('data-id', x)      }
+        $('#movie2'+ x).addClass('movie-poster-section3');
+        $('#movie2' + x).attr('data-id', x)      }
     }
     for (var x = 5; x < 9; x++){
       if(response.results[x].poster_path !== null){
-        $('#item9').append("<img src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
+        $('#item9').append("<img id='movie2" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
         $('#item10').append(response.results[x].title);
-        $('#movie'+ x).addClass('movie-poster');
-        $('#movie' + x).attr('data-id', x)
+        $('#movie2'+ x).addClass('movie-poster-section3');
+        $('#movie2' + x).attr('data-id', x)
       }
     }
     for (var x = 9; x < 13; x++){
       if(response.results[x].poster_path !== null){
-        $('#item11').append("<img src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
+        $('#item11').append("<img id='movie2" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
         $('#item12').append(response.results[x].title);
-        $('#movie'+ x).addClass('movie-poster');
-        $('#movie' + x).attr('data-id', x)
+        $('#movie2'+ x).addClass('movie-poster-section3');
+        $('#movie2' + x).attr('data-id', x)
       }
     }
+
+    // on click function for movie posters
+    $('.movie-poster-section3').on('click', function(){
+      console.log('working');
+      // Hides Front Page and displays movie info screen
+      $('.movie-info-screen').css('display', 'inline-block');
+      $('.carousel').css('display', 'none');
+      $('.first-page').css('display', 'none');
+  
+      var movies = response.results
+      var clicked = $(this).attr('data-id');
+      // Display Poster
+      $('.poster').html("<img src='http://image.tmdb.org/t/p/w185/" + movies[clicked].poster_path + "'></img>");
+      // Display Title
+      $('.title').html(movies[clicked].title);
+      // Display Overview
+      $('.overview').html('<br>' + movies[clicked].overview);
+      // Display Overview
+      $('.release-date').html('<br>' + 'Release Date: ' + movies[clicked].release_date);
+      // Display Overview
+      $('.vote-average').html('<br>' + 'Voters Average: ' + movies[clicked].vote_average);
+    })
   });
 
-  // on click function for movie posters
-  $('.movie-poster').on('click', function(){
-    console.log('working');
-    // Hides Front Page and displays movie info screen
-    $('.movie-info-screen').css('display', 'inline-block');
-    $('.carousel').css('display', 'none');
-    $('.first-page').css('display', 'none');
-
-    var movies = response.results
-    var clicked = $(this).attr('data-id');
-    // Display Poster
-    $('.poster').html("<img src='http://image.tmdb.org/t/p/w185/" + movies[clicked].poster_path + "'></img>");
-    // Display Title
-    $('.title').html(movies[clicked].title);
-    // Display Overview
-    $('.overview').html('<br>' + movies[clicked].overview);
-    // Display Overview
-    $('.release-date').html('<br>' + 'Release Date: ' + movies[clicked].release_date);
-    // Display Overview
-    $('.vote-average').html('<br>' + 'Voters Average: ' + movies[clicked].vote_average);
-  })
 
     // Pagination for Now Playing 
     $('.part4').on('click', function(){
@@ -188,64 +189,79 @@ $(document).ready(function(){
     // console.log(response);
     for (var x = 0; x < 4; x++){    
       if(response.results[x].poster_path !== null){
-        $('.fourth-section1').append("<img src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
-        $('.fourth-section1').append(response.results[x].title);
+        $('#item13').append("<img id='movie3" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
+        $('#item14').append(response.results[x].title);
+        $('#movie3'+ x).addClass('movie-poster-section4');
+        $('#movie3' + x).attr('data-id', x)
       }
     }
     for (var x = 4; x < 8; x++){
       if(response.results[x].poster_path !== null){
-        $('.fourth-section2').append("<img src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
-        $('.fourth-section2').append(response.results[x].title);
+        $('#item15').append("<img id='movie3" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
+        $('#item16').append(response.results[x].title);
+        $('#movie3'+ x).addClass('movie-poster-section4');
+        $('#movie3' + x).attr('data-id', x)
       }
     }    
     for (var x = 8; x < 12; x++){
       if(response.results[x].poster_path !== null){
-        $('.fourth-section3').append("<img src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
-        $('.fourth-section3').append(response.results[x].title);
+        $('#item17').append("<img id='movie3" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
+        $('#item18').append(response.results[x].title);
+        $('#movie3'+ x).addClass('movie-poster-section4');
+        $('#movie3' + x).attr('data-id', x)
       }
     }
+    // On click for clicking posters
+    $('.movie-poster-section4').on('click', function(){
+      console.log('working');
+      // Hides Front Page and displays movie info screen
+      $('.movie-info-screen').css('display', 'inline-block');
+      $('.carousel').css('display', 'none');
+      $('.first-page').css('display', 'none');
+  
+      var movies = response.results
+      var clicked = $(this).attr('data-id');
+      // Display Poster
+      $('.poster').html("<img src='http://image.tmdb.org/t/p/w185/" + movies[clicked].poster_path + "'></img>");
+      // Display Title
+      $('.title').html(movies[clicked].title);
+      // Display Overview
+      $('.overview').html('<br>' + movies[clicked].overview);
+      // Display Overview
+      $('.release-date').html('<br>' + 'Release Date: ' + movies[clicked].release_date);
+      // Display Overview
+      $('.vote-average').html('<br>' + 'Voters Average: ' + movies[clicked].vote_average);
+    })
   });
   
 
-  // On click for clicking posters
-  $('.movie-poster').on('click', function(){
-    console.log('working');
-    // Hides Front Page and displays movie info screen
-    $('.movie-info-screen').css('display', 'inline-block');
-    $('.carousel').css('display', 'none');
-    $('.first-page').css('display', 'none');
 
-    var movies = response.results
-    var clicked = $(this).attr('data-id');
-    // Display Poster
-    $('.poster').html("<img src='http://image.tmdb.org/t/p/w185/" + movies[clicked].poster_path + "'></img>");
-    // Display Title
-    $('.title').html(movies[clicked].title);
-    // Display Overview
-    $('.overview').html('<br>' + movies[clicked].overview);
-    // Display Overview
-    $('.release-date').html('<br>' + 'Release Date: ' + movies[clicked].release_date);
-    // Display Overview
-    $('.vote-average').html('<br>' + 'Voters Average: ' + movies[clicked].vote_average);
-  })
-
-    // Pagination for Top 10
+    // Pagination for Now Playing 
     $('.part7').on('click', function(){
-      $('.fourth-section1').css('display', 'inline-block');
-      $('.fourth-section2').css('display', 'none');
-      $('.fourth-section3').css('display', 'none');
+      $('#item13').css('display', 'inline-block');
+      $('#item14').css('display', 'inline-block');
+      $('#item15').css('display', 'none');
+      $('#item16').css('display', 'none');
+      $('#item17').css('display', 'none');
+      $('#item18').css('display', 'none');
     })
     $('.part8').on('click', function(){
       // console.log('working');
-      $('.fourth-section1').css('display', 'none');
-      $('.fourth-section2').css('display', 'inline-block');
-      $('.fourth-section3').css('display', 'none');
+      $('#item13').css('display', 'none');
+      $('#item14').css('display', 'none');
+      $('#item15').css('display', 'inline-block');
+      $('#item16').css('display', 'inline-block');
+      $('#item17').css('display', 'none');
+      $('#item18').css('display', 'none');
     })
     $('.part9').on('click', function(){
       // console.log('works');
-      $('.fourth-section1').css('display', 'none');
-      $('.fourth-section2').css('display', 'none');
-      $('.fourth-section3').css('display', 'inline-block');
+      $('#item13').css('display', 'none');
+      $('#item14').css('display', 'none');
+      $('#item15').css('display', 'none');
+      $('#item16').css('display', 'none');
+      $('#item17').css('display', 'inline-block');
+      $('#item18').css('display', 'inline-block');
     })
 
     $('#homescreen').on('click', function(){
