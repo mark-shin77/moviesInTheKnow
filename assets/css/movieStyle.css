@@ -17,9 +17,8 @@ nav {
     display:none;
 };
 
-.movie-info-screen{
+#movie-info-screen{
     display: none;
-    overflow: visible;
 }
 
 .poster{
