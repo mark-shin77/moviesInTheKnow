@@ -8,18 +8,12 @@ nav {
     font-size: 20px; 
 }
 
+#item2,
 #item3,
-#item4,
 #item5,
 #item6,
-#item9,
-#item10,
-#item11,
-#item12,
-#item15,
-#item16,
-#item17,
-#item18{
+#item8,
+#item9{
     display:none;
 };
 
