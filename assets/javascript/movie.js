@@ -192,4 +192,16 @@ $(document).ready(function(){
     $('#homescreen').on('click', function(){
       window.location.reload(true);
     });
+
+    apiKey = "AIzaSyAB9orHxZ9-7MUnlwFtmbHcUeaLCcmppTc"
+    queryURL = "https://www.googleapis.com/youtube/v3/videos?" + apiKey;
+
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(response){
+      console.log(response);
+      
+     
+    })
 });
