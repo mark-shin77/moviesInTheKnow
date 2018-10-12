@@ -1,13 +1,29 @@
-
+/* Basic Page Styling */
 body {
     font-family: 'EB Garamond', serif;
     font-style: black;
-
+    background-color: rgba(250, 235, 215, 0.555);
 }
 nav {
     font-size: 20px; 
 }
+img{
+    margin-left: auto;
+    margin-right: auto;
+}
 
+/* Testing Colors For Webpage */
+.card-header{
+    background-color: rgba(0, 0, 0, 0.822);
+    color: white;
+}
+.jumbotron{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.822);
+    color: white;
+}
+
+/* Making only 4 posters show at a time */
 #item2,
 #item3,
 #item5,
@@ -17,24 +33,32 @@ nav {
     display:none;
 };
 
+/* Hiding Movie Information Page Till A Poster is Clicked */
 #movie-info-screen{
     display: none;
 }
 
+/* Getting Things To Go Where We Want Them On The Page */
+.pagination{
+    float: right;   
+}
 .poster{
     float: left;
-
 }
-
+#selected-movie{
+    margin-left: 15%;
+}
 .movie-information{
     float: right;
     text-align: center;
 }
 
+/* Movie Information Styling */
 .title{
     font-weight: bold;
-    font-size: 40px;
+    font-size: 50px;
 }
+
 /* Style all font awesome icons */
 .fa {
     padding: 20px;
@@ -42,6 +66,7 @@ nav {
     width: 50px;
     text-align: center;
     text-decoration: none;
+    visibility: 
 }
 
 /* Add a hover effect if you want */
