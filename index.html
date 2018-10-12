@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -24,23 +24,23 @@
     <link href="https://fonts.googleapis.com/css?family=Changa" rel="stylesheet">
 </head>
 <body>
-
+  <a name="title1"></a>
   <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Movies in the Know</a>
+        <a class="navbar-brand" href="#title1" id="homescreen">Movies in the Know</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Now Playing</a>
+                    <a class="nav-link" href="#title2">Now Playing</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Coming Soon</a>
+                    <a class="nav-link" href="#title3">Coming Soon</a>
                 </li>
                 <li class="nav-item">    
-                    <a class="nav-link" href="#">Top 10 Movies of All Time</a>
+                    <a class="nav-link" href="#title4">Top 10 Movies of All Time</a>
                 </li>
     <!-- Search form -->
                 <div class="md-form">
@@ -83,19 +83,28 @@
   </div>
 
 <br>
-
-  <div class="container-fluid padding">
+  
+  <div class="container-fluid padding first-page">
     <div class="row welcome card-text">
-      <div class="col-12">
+      <div class="col-12"><a name="title2"></a>
           <h1 class="card-header">
             Now Playing
           </h1>
           <div class="card-body">
             <h5 class="card-title"></h5>
             <p class="card-text section2 nowPlaying">
-              <p class="second-section1"><a name="option1"></a></p>
-              <p class="second-section2"><a name="option2"></a></p>
-              <p class="second-section3"><a name="option3"></a></p>
+              <p class="second-section1"><a name="option1"></a>
+                <div class="row" id="item1"></div>
+                <div class="row" id="item2"></div>
+              </p>
+              <p class="second-section2"><a name="option2"></a>
+                <div class="row" id="item3"></div>
+                <div class="row" id="item4"></div>
+              </p>
+              <p class="second-section3"><a name="option3"></a>
+                <div class="row" id="item5"></div>
+                <div class="row" id="item6"></div>
+              </p>
             <nav aria-label="Page navigation example">
                 <ul class="pagination">
                   <li class="page-item">
@@ -120,7 +129,7 @@
     </div>
 <br>
     <div class="row">
-      <div class="col-12">
+      <div class="col-12"><a name="title3"></a>
           <h1 class="card-header">
             Coming Soon
           </h1>
@@ -152,11 +161,10 @@
           </div>
       </div>
     </div>
-  </div>
 
 <br>
     <div class="row">
-      <div class="col-12">
+      <div class="col-12"><a name="title4"></a>
           <h1 class="card-header">
                 Top 10 Movies of All Time
           </h1>
@@ -190,19 +198,27 @@
       </div>
     </div>
   </div>
+</div>
 
-  <div class="container">
+  <!--New Screen -->
+  <div class="container-fluid padding movie-info-screen">
     <!-- poster/title/overview -->
     <div class="row">
       <div class="jumbotron">
-        <div class="col-lg-4"></div>
-        <div class="col-lg-8">
+        <div class="col-lg-3 poster"></div>
+        <div class="col-lg-9 movie-information">
           <div class="row">
-            <div class="col-lg-12"></div>
-          <div class="row"></div>
-            <div class="lg-col-12"></div>
+            <div class="col-lg-12 title"></div>
           </div>
-        </div>
+          <div class="row">
+            <div class="col-lg-12 overview"></div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12 release-date"></div>
+          </div>
+          <div class="row">
+            <div class="col-lg-12 vote-average"></div>
+          </div>
       </div>
     </div>
     <!-- Cast -->
