@@ -43,14 +43,14 @@ $(document).ready(function(){
     $('.movie-poster-section2').on('click', function(){
       console.log('working');
       // Hides Front Page and displays movie info screen
-      $('.movie-info-screen').css('display', 'inline-block');
+      $('#movie-info-screen').show();
       $('.carousel').css('display', 'none');
       $('.first-page').css('display', 'none');
 
       var movies = response.results
       var clicked = $(this).attr('data-id');
       // Display Poster
-      $('.poster').html("<img src='http://image.tmdb.org/t/p/w185/" + movies[clicked].poster_path + "'></img>");
+      $('.poster').html("<img id='selected-movie' src='http://image.tmdb.org/t/p/w185/" + movies[clicked].poster_path + "'></img>");
       // Display Title
       $('.title').html(movies[clicked].title);
       // Display Overview
@@ -59,6 +59,25 @@ $(document).ready(function(){
       $('.release-date').html('<br>' + 'Release Date: ' + movies[clicked].release_date);
       // Display Overview
       $('.vote-average').html('<br>' + 'Voters Average: ' + movies[clicked].vote_average);
+      // Getting Back to top of the page
+      $('html,body').scrollTop(0);
+    })
+
+    var movieTitle = response.results[x].title
+    apiKey = "AIzaSyAB9orHxZ9-7MUnlwFtmbHcUeaLCcmppTc"
+    queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q="+ movieTitle +"trailer&key=" + apiKey;
+    
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(trailer){
+      console.log(trailer);
+      for(var x = 0; x < 2; x++){
+        if(trailer.items[x].id.videoId !== null) {
+          var videoInfo = trailer.items[0].id.videoId
+          $('#trailer').html("<iframe width='560' height='315' src='https://www.youtube.com/embed/'"+videoInfo+"frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
+        }
+      }
     })
     
     var movieTitle = response.results[x].title
@@ -80,21 +99,21 @@ $(document).ready(function(){
 
   // Pagination for Now Playing 
   $('.part1').on('click', function(){
-    $('#item1').css('display', 'inline-block');
+    $('#item1').css('display', 'flex');
     $('#item2').css('display', 'none');
     $('#item3').css('display', 'none');
   })
   $('.part2').on('click', function(){
     // console.log('working');
     $('#item1').css('display', 'none');
-    $('#item2').css('display', 'inline-block');
+    $('#item2').css('display', 'flex');
     $('#item3').css('display', 'none');
   })
   $('.part3').on('click', function(){
     // console.log('works');
     $('#item1').css('display', 'none');
     $('#item2').css('display', 'none');
-    $('#item3').css('display', 'inline-block');
+    $('#item3').css('display', 'flex');
   })
 
   // Generate Movie Posters & Title to 'Coming Soon'
@@ -106,20 +125,20 @@ $(document).ready(function(){
     method: "GET"
   }).then(function(response){  
     console.log(response);
-    for (var x = 0; x < 5; x++){
+    for (var x = 0; x < 6; x++){
       if(response.results[x].poster_path !== null){
         $('#item4').append("<img id='movie2" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
         $('#movie2'+ x).addClass('movie-poster-section3');
         $('#movie2' + x).attr('data-id', x)      }
     }
-    for (var x = 5; x < 10; x++){
+    for (var x = 6; x < 11; x++){
       if(response.results[x].poster_path !== null){
         $('#item5').append("<img id='movie2" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
         $('#movie2'+ x).addClass('movie-poster-section3');
         $('#movie2' + x).attr('data-id', x)
       }
     }
-    for (var x = 10; x < 15; x++){
+    for (var x = 11; x < 15; x++){
       if(response.results[x].poster_path !== null){
         $('#item6').append("<img id='movie2" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
         $('#movie2'+ x).addClass('movie-poster-section3');
@@ -131,7 +150,7 @@ $(document).ready(function(){
     $('.movie-poster-section3').on('click', function(){
       console.log('working');
       // Hides Front Page and displays movie info screen
-      $('.movie-info-screen').css('display', 'inline-block');
+      $('#movie-info-screen').show();
       $('.carousel').css('display', 'none');
       $('.first-page').css('display', 'none');
   
@@ -147,27 +166,28 @@ $(document).ready(function(){
       $('.release-date').html('<br>' + 'Release Date: ' + movies[clicked].release_date);
       // Display Overview
       $('.vote-average').html('<br>' + 'Voters Average: ' + movies[clicked].vote_average);
+      // Getting Back to top of the page
+      $('html,body').scrollTop(0);
     })
   });
 
-
     // Pagination for Now Playing 
     $('.part4').on('click', function(){
-      $('#item4').css('display', 'inline-block');
+      $('#item4').css('display', 'flex');
       $('#item5').css('display', 'none');
       $('#item6').css('display', 'none');
     })
     $('.part5').on('click', function(){
       // console.log('working');
       $('#item4').css('display', 'none');
-      $('#item5').css('display', 'inline-block');
+      $('#item5').css('display', 'flex');
       $('#item6').css('display', 'none');
     })
     $('.part6').on('click', function(){
       // console.log('works');
       $('#item4').css('display', 'none');
       $('#item5').css('display', 'none');
-      $('#item6').css('display', 'inline-block');
+      $('#item6').css('display', 'flex');
     })
 
   // Generate Movie Posters & Titles to 'Top 10 Moives of All Time'
@@ -204,7 +224,7 @@ $(document).ready(function(){
     $('.movie-poster-section4').on('click', function(){
       console.log('working');
       // Hides Front Page and displays movie info screen
-      $('.movie-info-screen').css('display', 'inline-block');
+      $('#movie-info-screen').show();
       $('.carousel').css('display', 'none');
       $('.first-page').css('display', 'none');
   
@@ -220,31 +240,41 @@ $(document).ready(function(){
       $('.release-date').html('<br>' + 'Release Date: ' + movies[clicked].release_date);
       // Display Overview
       $('.vote-average').html('<br>' + 'Voters Average: ' + movies[clicked].vote_average);
+      // Getting Back to top of the page
+      $('html,body').scrollTop(0);
     })
   });
-  
-
 
     // Pagination for Now Playing 
     $('.part7').on('click', function(){
-      $('#item7').css('display', 'inline-block');
+      $('#item7').css('display', 'flex');
       $('#item8').css('display', 'none');
       $('#item9').css('display', 'none');
     })
     $('.part8').on('click', function(){
       // console.log('working');
       $('#item7').css('display', 'none');
-      $('#item8').css('display', 'inline-block');
+      $('#item8').css('display', 'flex');
       $('#item9').css('display', 'none');
     })
     $('.part9').on('click', function(){
       // console.log('works');
       $('#item7').css('display', 'none');
       $('#item8').css('display', 'none');
-      $('#item9').css('display', 'inline-block');
+      $('#item9').css('display', 'flex');
     })
 
+    // Reloading Page to displaying deticated section in home screen
     $('#homescreen').on('click', function(){
+      window.location.reload(true);
+    });
+    $('#nowPlaying').on('click', function(){
+      window.location.reload(true);
+    });
+    $("#comingSoon").on('click', function(){
+      window.location.reload(true);
+    });
+    $("#top10").on('click', function(){
       window.location.reload(true);
     });
 });
