@@ -1,22 +1,24 @@
 
 body {
-    font-family: 'Changa', sans-serif;
+    font-family: 'EB Garamond', serif;
+    font-style: black;
+
+}
+nav {
+    font-size: 20px; 
 }
 
+#item2,
 #item3,
-#item4,
 #item5,
 #item6,
-.third-section2,
-.third-section3,
-.fourth-section2,
-.fourth-section3{
+#item8,
+#item9{
     display:none;
 };
 
-.movie-info-screen{
+#movie-info-screen{
     display: none;
-    overflow: visible;
 }
 
 .poster{
@@ -33,3 +35,40 @@ body {
     font-weight: bold;
     font-size: 40px;
 }
+/* Style all font awesome icons */
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+    opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */s
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+.fa-youtube {
+    background: #bb0000;
+    color: white;
+  }
+  
+  .fa-instagram {
+    background: #125688;
+    color: white;
+  }
+  
