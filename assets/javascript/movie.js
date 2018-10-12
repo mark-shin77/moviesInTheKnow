@@ -22,15 +22,15 @@ $(document).ready(function(){
     for (var x = 0; x < 4; x++){
       if(response.results[x].poster_path !== null){
         $('#item1').append("<img id='movie1" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
-        $('#movie1'+ x).addClass('movie-poster-section2');
-        $('#movie1' + x).attr('data-id', x)
+        $('#movie'+ x).addClass('movie-poster-section2');
+        $('#movie' + x).attr('data-id', x)
       }
     }
     for (var x = 4; x < 8; x++){
       if(response.results[x].poster_path !== null){
         $('#item2').append("<img id='movie1" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
-        $('#movie1'+ x).addClass('movie-poster-section2');
-        $('#movie1' + x).attr('data-id', x)
+        $('#movie'+ x).addClass('movie-poster-section2');
+        $('#movie' + x).attr('data-id', x)
       }
     }
     for (var x = 8; x < 12; x++){
