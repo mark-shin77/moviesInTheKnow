@@ -1,0 +1,35 @@
+
+body {
+    font-family: 'Changa', sans-serif;
+}
+
+#item3,
+#item4,
+#item5,
+#item6,
+.third-section2,
+.third-section3,
+.fourth-section2,
+.fourth-section3{
+    display:none;
+};
+
+.movie-info-screen{
+    display: none;
+    overflow: visible;
+}
+
+.poster{
+    float: left;
+
+}
+
+.movie-information{
+    float: right;
+    text-align: center;
+}
+
+.title{
+    font-weight: bold;
+    font-size: 40px;
+}
