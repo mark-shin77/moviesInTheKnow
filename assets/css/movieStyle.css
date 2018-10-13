@@ -53,6 +53,18 @@ img{
     float: right;
     text-align: center;
 }
+.intro{
+    text-align: center;
+    margin-bottom: 0;
+}
+.fun-facts{
+    text-align: center;
+    font-size: 14px;
+}
+
+.overview{
+    font-size: 18px;
+}
 
 /* Movie Information Styling */
 .title{
