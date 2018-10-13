@@ -74,6 +74,11 @@ img{
     font-size: 50px;
 }
 
+/* Hover Styling */
+.movie-poster-section2:hover .image{
+    opacity: .5;
+}
+
 /*--- Connect / Social Media ---*/
 .social a {
     font-size: 4.5em;
@@ -105,5 +110,22 @@ img{
 .fa-instagram:hover,
 .fa-youtube:hover {
   color: #d5d5d5;
+}
+
+
+@media screen and (max-width: 768px){
+    .rotatingImages{
+        width: 750px;
+        display: inline-block;
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 415px){
+    .rotatingImages{
+        width: 375px;
+        display: inline-block;
+        margin: auto;
+    }
 }
    
