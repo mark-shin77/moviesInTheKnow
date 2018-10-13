@@ -98,7 +98,23 @@ $(document).ready(function(){
         }
       }
     })
-  });
+    
+    var movieTitle = response.results[x].title
+    apiKey = "AIzaSyAB9orHxZ9-7MUnlwFtmbHcUeaLCcmppTc"
+    queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q="+ movieTitle +"trailer&key=" + apiKey;
+    
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function(trailer){
+      console.log(trailer);
+      for(var x = 0; x < 1; x++){
+        if(trailer.items[0].id.videoId !== null) {
+          $('#trailer').html("<iframe width='560' height='315' src='https://www.youtube.com/embed/' + trailer.items[x].id frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>");
+        }
+      }
+    })
+});
 
   // Pagination for Now Playing 
   $('.part1').on('click', function(){
