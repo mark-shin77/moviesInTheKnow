@@ -45,7 +45,9 @@ img{
 .poster{
     float: left;
 }
-
+.img:hover{
+    color: #d5d5d5;
+}
 #selected-movie{
     margin-left: 15%;
 }

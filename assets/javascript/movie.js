@@ -36,7 +36,7 @@ $(document).ready(function(){
     var random = funFacts[Math.floor(Math.random()*funFacts.length)];
     for (var i = 0; i < funFacts.length; i++){
       console.log('hi');
-      $('.intro').html('Fun Fact!')
+      $('.intro').html('Fun Movie Fact!')
       $('.fun-facts').text(random);
     }
     
