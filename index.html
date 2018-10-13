@@ -1,57 +1,61 @@
   <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Document</title>
 
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <!-- Jquery -->
-    <script
-  src="https://code.jquery.com/jquery-3.3.1.min.js"
-  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
-    <!-- Firebase -->
-    <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
-    <!-- My CSS -->
-    <link rel="stylesheet" type="text/css" href="../project1/assets/css/movieStyle.css">
-    <!--Boostrap js-->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- My Javascript -->
-    <script src="../project1/assets/javascript/movie.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Changa" rel="stylesheet">
-</head>
-<body>
-  <a name="title1"></a>
-  <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
-    <div class="container-fluid">
+      <!-- Jquery -->
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+      <!-- Firebase -->
+      <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
+      <!-- My Javascript -->
+      <script src="../project1/assets/javascript/movie.js"></script>
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <!-- My CSS -->
+      <link rel="stylesheet" type="text/css" href="../project1/assets/css/movieStyle.css">
+      <!--Boostrap JavaScript-->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <!--Font Awesome CDN-->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <!-- Google Fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Changa" rel="stylesheet">
+
+  </head>
+  <body>
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+      <div class="container-fluid">
+        <!-- Logo Inside Nav Bar -->
         <a class="navbar-brand" href="#title1" id="homescreen" ><img src="assets/images/logo.png" alt="Logo" width="250" height="70"></a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+        <!-- Nav Bar Links -->
         <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#title2">Now Playing</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#title3">Coming Soon</a>
-                </li>
-                <li class="nav-item">    
-                    <a class="nav-link" href="#title4">Top 10 Movies of All Time</a>
-                </li>
-    <!-- Search form -->
-                <div class="md-form">
-                    <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-                </div>
-            </ul>
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#title2" id="nowPlaying">Now Playing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#title3" id="comingSoon">Coming Soon</a>
+            </li>
+            <li class="nav-item">    
+              <a class="nav-link" href="#title4" id="top10">Top 10 Movies of All Time</a>
+            </li>
+        <!-- Search form -->
+            <div class="md-form">
+              <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+            </div>
+          </ul>
         </div>
-    </div>
-    </nav>  
-    <!--carousel starts -->            
-    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      </div>
+    </nav>
+        
+    <br>
+
+    <!-- Carousel Starts -->            
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" style="width: 900px; margin: 0 auto" data-ride="carousel"><a name="title1"></a>
+      <!-- Carousel Images -->
       <div class="carousel-inner">
         <div class="carousel-item active item">
           <img class="d-block w-100" src="assets/images/Venom-Movie.jpg" alt="First slide">
@@ -60,92 +64,98 @@
           <img class="d-block w-100" src="assets/images/background2.jpg" alt="Second slide">
         </div>
         <div class="carousel-item item">
-          <img class="d-block w-100" src="assets/images/background3.jpeg" alt="Third slide">
+          <img class="d-block w-100" src="assets/images/background.jpg" alt="Third slide">
         </div>
       </div>
-      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+      <!-- Buttons To Click Through Carousel Images -->
+      <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
       </a>
-      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+      <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
     </div>
 
-      <div class="card-body">
-            <h5 class="card-title"></h5>
-            <p class="card-text section1" id="header titleScreen"></p>
+    <br>
+    
+    <!-- Now Playing / Coming Soon / Top 10 Movies Section -->
+    <div class="container-fluid padding first-page">
+      <!-- Now Playing Movie Posters -->
+      <div class="row welcome card-text">
+        <div class="col-12">
+          <h1 class="card-header">
+            <a name="title2">Now Playing</a>
+          </h1>
+          <div class="card-body">
+            <p class="card-text section2 nowPlaying">
+              <!-- Movies 1-4 -->
+              <p class="second-section1"><a name="option1"></a>
+                <div class="row" id="item1"></div>
+              </p>
+              <!-- Movies 5-8 -->              
+              <p class="second-section2"><a name="option2"></a>
+                <div class="row" id="item2"></div>
+              </p>
+              <!-- Movies 9-12 -->
+              <p class="second-section3"><a name="option3"></a>
+                <div class="row" id="item3"></div>
+              </p>
+            </p>
+    <br>
+            <!-- Pagination Buttons -->
+            <nav aria-label="Page navigation example">
+              <ul class="pagination">
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                </li>
+                <li class="page-item part1"><a class="page-link" href="#option1">1</a></li>
+                <li class="page-item part2"><a class="page-link" href="#option2">2</a></li>
+                <li class="page-item part3"><a class="page-link" href="#option3">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
       </div>
-    </div>
-  </div>
 
-<br>
-  
-  <div class="container-fluid padding first-page">
-    <div class="row welcome card-text">
-      <div class="col-12"><a name="title2"></a>
+    <br>
+
+      <!-- Now Playing Movie Posters -->
+      <div class="row">
+        <div class="col-12">
           <h1 class="card-header">
-            Now Playing
+            <a name="title3">Coming Soon</a>
           </h1>
           <div class="card-body">
-            <h5 class="card-title"></h5>
-            <p class="card-text section2 nowPlaying">
-              <p class="second-section1"><a name="option1"></a>
-                <div class="row" id="item1"></div>
-                <div class="row" id="item2"></div>
-              </p>
-              <p class="second-section2"><a name="option2"></a>
-                <div class="row" id="item3"></div>
+            <p class="card-text section3 comingSoon">
+              <!-- Movies 1-4 -->
+              <p class="third-section1"><a name="option4"></a>
                 <div class="row" id="item4"></div>
               </p>
-              <p class="second-section3"><a name="option3"></a>
+              <!-- Movies 5-8 -->
+              <p class="third-section2"><a name="option5"></a>
                 <div class="row" id="item5"></div>
+              </p>
+              <!-- Movies 9-12 -->
+              <p class="third-section3"><a name="option6"></a>
                 <div class="row" id="item6"></div>
               </p>
+            </p>
+
+      <br>
+
+            <!-- Pagination -->
             <nav aria-label="Page navigation example">
-                <ul class="pagination">
-                  <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
-                      <span aria-hidden="true">&laquo;</span>
-                      <span class="sr-only">Previous</span>
-                    </a>
-                  </li>
-                  <li class="page-item part1"><a class="page-link" href="#option1">1</a></li>
-                  <li class="page-item part2"><a class="page-link" href="#option2">2</a></li>
-                  <li class="page-item part3"><a class="page-link" href="#option3">3</a></li>
-                  <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
-                      <span aria-hidden="true">&raquo;</span>
-                      <span class="sr-only">Next</span>
-                    </a>
-                  </li>
-                </ul>
-              </nav>
-          </div>
-          </div>
-    </div>
-<br>
-    <div class="row">
-      <div class="col-12"><a name="title3"></a>
-          <h1 class="card-header">
-            Coming Soon
-          </h1>
-          <div class="card-body">
-            <h5 class="card-title"></h5>
-            <p class="card-text section3 comingSoon"></p>
-            <p class="third-section1"><a name="option4"></a>
-              <div class="row" id="item7"></div>
-              <div class="row" id="item8"></div></p>
-            <p class="third-section2"><a name="option5"></a>
-              <div class="row" id="item9"></div>
-              <div class="row" id="item10"></div></p>
-            <p class="third-section3"><a name="option6"></a>
-              <div class="row" id="item11"></div>
-              <div class="row" id="item12"></div></p>
-          <nav aria-label="Page navigation example">
               <ul class="pagination">
                 <li class="page-item">
                   <a class="page-link" href="#" aria-label="Previous">
@@ -163,33 +173,38 @@
                   </a>
                 </li>
               </ul>
-          </nav>
+            </nav>
           </div>
+        </div>
       </div>
-    </div>
 
-<br>
-    <div class="row">
-      <div class="col-12"><a name="title4"></a>
+    <br>
+
+      <!-- Top 10 Movie Posters -->
+      <div class="row">
+        <div class="col-12">
           <h1 class="card-header">
-                Top 10 Movies of All Time
+              <a name="title4">Top 10 Movies of All Time</a>
           </h1>
           <div class="card-body">
-            <h5 class="card-title"></h5>
             <p class="card-text section4 topMovies"></p>
             <p class="fourth-section1"><a name="option7"></a>
-              <div class="row" id="item13"></div>
-              <div class="row" id="item14"></div>
+              <!-- Movies 1-4 -->
+              <div class="row" id="item7"></div>
             </p>
             <p class="fourth-section2"><a name="option8"></a>
-              <div class="row" id="item15"></div>
-              <div class="row" id="item16"></div>
+              <!-- Movies 5-8 -->
+              <div class="row" id="item8"></div>
             </p>
+              <!-- Movies 9-12 -->
             <p class="fourth-section3"><a name="option9"></a>
-              <div class="row" id="item17"></div>
-              <div class="row" id="item18"></div>
+              <div class="row" id="item9"></div>
             </p>
-          <nav aria-label="Page navigation example">
+
+    <br>
+
+            <!-- Pagination -->
+            <nav aria-label="Page navigation example">
               <ul class="pagination">
                 <li class="page-item">
                   <a class="page-link" href="#" aria-label="Previous">
@@ -207,45 +222,102 @@
                   </a>
                 </li>
               </ul>
-          </nav>
+            </nav>
           </div>
         </div>        
       </div>
     </div>
-  </div>
-</div>
 
-  <!--New Screen -->
-  <div class="container-fluid padding movie-info-screen">
-    <!-- poster/title/overview -->
-    <div class="row">
-      <div class="jumbotron">
-        <div class="col-lg-3 poster"></div>
-        <div class="col-lg-9 movie-information">
+    <!-- Movie Information Screen -->
+    <div class="container-fluid padding">
+      <div class="generatedMovieInfo" id="movie-info-screen" style="display: none;">
+        <!-- Information From moviesdb API Call-->
+        <div class="jumbotron">
           <div class="row">
-            <div class="col-lg-12 title"></div>
+            <!-- Poster Section -->
+            <div class="col-lg-4 poster"></div>
+            <!-- Movie Information Section -->
+            <div class="col-lg-8 movie-information">
+              <div class="row">
+                <!-- Movie Title -->
+                <div class="col-lg-12 title"></div>
+              </div>
+              <div class="row">
+                <!-- Movie Overview -->
+                <div class="col-lg-12 overview"></div>
+              </div>
+              <div class="row">
+                <!-- Release Date -->
+                <div class="col-lg-12 release-date"></div>
+              </div>
+              <div class="row">
+                <!-- Voters Average -->
+                <div class="col-lg-12 vote-average"></div>
+              </div>
+            </div>
           </div>
-          <div class="row">
-            <div class="col-lg-12 overview"></div>
-          </div>
-          <div class="row">
-            <div class="col-lg-12 release-date"></div>
-          </div>
-          <div class="row">
-            <div class="col-lg-12 vote-average"></div>
-          </div>
+        </div>
+        <!-- Cast -->
+        <div class="row">
+          <div class="col-lg-12"></div>
+        </div>
+      <!-- Trailer -->
+        <div class="row">
+          <!-- Youtube Video -->
+          <div class="col-lg-12" id="trailer"></div>
+        </div>
       </div>
     </div>
-    <!-- Cast -->
-    <div class="row">
-      <div class="col-lg-12">
 
+    <br>
+
+    <!-- Connect Information -->
+    <div class="container-fluid padding">
+      <div class="row text-center padding">
+        <div class="col-12">
+            <h2>Connect</h2>
+        </div>
+        <!-- Social Media Links -->
+        <div class="col-12 social padding">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-twitter"></a>
+            <a href="#" class="fa fa-youtube"></a>
+            <a href="#" class="fa fa-instagram"></a>
+        </div>
       </div>
+      <hr class="my-4">
     </div>
-    <!-- Trailer -->
-    <div class="row">
-      <div class="col-lg-12"></div>
-    </div>
-  </div>
-</body>
+
+    <!-- Footer Section -->
+    <footer>
+      <div class="container-fluid padding">
+        <div class="row text-center">
+          <div class="col-md-6">
+            <!-- Logo Icon Here-->
+            <img src="assets/images/logo.png" alt="Logo" width="200" height="58"> 
+            <!-- Business Info -->
+            <hr class="light">
+            <p>555-555-5555</p>
+            <p>email@email.com</p>
+            <p>100 Street Name</p>
+            <p>City, State, 00000</p>
+          </div>
+          <div class="col-md-6">
+            <!-- Customer Support Info -->
+            <hr class="light">
+            <h5>Customer Support</h5>
+            <hr class="light">
+            <p>555-333-4444</p>
+            <p>customersupport@moviesintheknow.com</p>
+            <p>Sunday: Closed</p>
+          </div>
+          <!-- Copywrite Tag -->
+          <div class="col-12">
+            <hr class="light-100">
+            <h5>&copy Movies in the Know</h5>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>

@@ -1,44 +1,99 @@
-
+/* Basic Page Styling */
 body {
     font-family: 'EB Garamond', serif;
     font-style: black;
-
+    background-color: rgba(250, 235, 215, 0.555);
 }
 nav {
     font-size: 20px; 
 }
+img{
+    margin-left: auto;
+    margin-right: auto;
+}
 
+/* Testing Colors For Webpage */
+.card-header{
+    background-color: rgba(0, 0, 0, 0.822);
+    color: white;
+}
+.jumbotron{
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.822);
+    color: white;
+}
+
+/* Making only 4 posters show at a time */
+#item2,
 #item3,
-#item4,
 #item5,
 #item6,
-#item9,
-#item10,
-#item11,
-#item12,
-#item15,
-#item16,
-#item17,
-#item18{
+#item8,
+#item9{
     display:none;
 };
 
-.movie-info-screen{
+/* Hiding Movie Information Page Till A Poster is Clicked */
+#movie-info-screen{
     display: none;
-    overflow: visible;
 }
 
+/* Getting Things To Go Where We Want Them On The Page */
+.pagination{
+    float: right;   
+}
 .poster{
     float: left;
-
 }
-
+#selected-movie{
+    margin-left: 15%;
+}
 .movie-information{
     float: right;
     text-align: center;
 }
 
+/* Movie Information Styling */
 .title{
     font-weight: bold;
-    font-size: 40px;
+    font-size: 50px;
 }
+
+/* Style all font awesome icons */
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    visibility: 
+}
+
+/* Add a hover effect if you want */
+.fa:hover {
+    opacity: 0.7;
+}
+
+/* Set a specific color for each brand */
+
+/* Facebook */s
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+}
+
+/* Twitter */
+.fa-twitter {
+    background: #55ACEE;
+    color: white;
+}
+.fa-youtube {
+    background: #bb0000;
+    color: white;
+  }
+  
+  .fa-instagram {
+    background: #125688;
+    color: white;
+  }
+  
