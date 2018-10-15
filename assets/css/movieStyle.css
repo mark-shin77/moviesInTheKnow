@@ -119,6 +119,14 @@ img{
         display: inline-block;
         margin: auto;
     }
+
+    #navbarResponsive {        
+            
+            display: inline;           
+            text-align: center;           
+    }
+
+     
 }
 
 @media screen and (max-width: 415px){
@@ -127,5 +135,10 @@ img{
         display: inline-block;
         margin: auto;
     }
+
+    
+
+    
+    
 }
    
