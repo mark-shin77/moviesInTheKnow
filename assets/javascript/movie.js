@@ -141,20 +141,20 @@ $(document).ready(function(){
     method: "GET"
   }).then(function(response){  
     console.log(response);
-    for (var x = 0; x < 5; x++){
+    for (var x = 0; x < 4; x++){
       if(response.results[x].poster_path !== null){
         $('#item4').append("<img id='movie2" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
         $('#movie2'+ x).addClass('movie-poster-section3');
         $('#movie2' + x).attr('data-id', x)      }
     }
-    for (var x = 5; x < 9; x++){
+    for (var x = 4; x < 8; x++){
       if(response.results[x].poster_path !== null){
         $('#item5').append("<img id='movie2" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
         $('#movie2'+ x).addClass('movie-poster-section3');
         $('#movie2' + x).attr('data-id', x)
       }
     }
-    for (var x = 9; x < 14; x++){
+    for (var x = 8; x < 12; x++){
       if(response.results[x].poster_path !== null){
         $('#item6').append("<img id='movie2" + x + "' src='http://image.tmdb.org/t/p/w185/" + response.results[x].poster_path + "'></img>");
         $('#movie2'+ x).addClass('movie-poster-section3');
